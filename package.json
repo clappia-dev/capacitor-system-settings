@@ -1,6 +1,6 @@
 {
-  "name": "@clappia-dev/capacitor-system-settings",
-  "version": "0.0.1",
+  "name": "@clappia/capacitor-system-settings",
+  "version": "1.0",
   "description": "Capacitor plugin to access the attributes of Developer Options",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -37,7 +37,7 @@
     "eslint": "eslint . --ext ts",
     "prettier": "prettier \"**/*.{css,html,ts,js,java}\"",
     "swiftlint": "node-swiftlint",
-    "docgen": "docgen --api SystemSettingsPluginPlugin --output-readme README.md --output-json dist/docs.json",
+    "docgen": "docgen --api SystemSettingsPlugin --output-readme README.md --output-json dist/docs.json",
     "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.js",
     "clean": "rimraf ./dist",
     "watch": "tsc --watch",

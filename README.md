@@ -1,11 +1,11 @@
 # @clappia-dev/capacitor-system-settings
 
-Capacitor plugin to access the attributes of Developer Options
+Capacitor plugin to access the attributes of Developer Options (Android only)
 
 ## Install
 
 ```bash
-npm install @clappia-dev/capacitor-system-settings
+npm install @clappia/capacitor-system-settings
 npx cap sync
 ```
 
@@ -13,24 +13,23 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`getDeveloperOptions()`](#getdeveloperoptions)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### getDeveloperOptions()
 
 ```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+getDeveloperOptions() => Promise<any>
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
+Returns a map { developerOptionsEnabled: boolean } indicating whether the developer options are enabled.
+In future, this will return more attributes related to the system settings.
 
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+**Returns:** <code>Promise&lt;any&gt;</code>
 
 --------------------
 

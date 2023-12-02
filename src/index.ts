@@ -1,13 +1,10 @@
 import { registerPlugin } from '@capacitor/core';
 
-import type { SystemSettingsPluginPlugin } from './definitions';
+import type { SystemSettingsPlugin } from './definitions';
 
-const SystemSettingsPlugin = registerPlugin<SystemSettingsPluginPlugin>(
-  'SystemSettingsPlugin',
-  {
-    web: () => import('./web').then(m => new m.SystemSettingsPluginWeb()),
-  },
-);
+const SystemSettings = registerPlugin<SystemSettingsPlugin>('SystemSettings', {
+  web: () => import('./web').then(m => new m.SystemSettingsWeb()),
+});
 
 export * from './definitions';
-export { SystemSettingsPlugin };
+export { SystemSettings };

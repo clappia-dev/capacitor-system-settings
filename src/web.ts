@@ -1,13 +1,16 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { SystemSettingsPluginPlugin } from './definitions';
+import type { SystemSettingsPlugin } from './definitions';
 
-export class SystemSettingsPluginWeb
+export class SystemSettingsWeb
   extends WebPlugin
-  implements SystemSettingsPluginPlugin
+  implements SystemSettingsPlugin
 {
   async echo(options: { value: string }): Promise<{ value: string }> {
     console.log('ECHO', options);
     return options;
+  }
+  async getDeveloperOptions(): Promise<any> {
+    return { developerOptionsEnabled: false };
   }
 }
