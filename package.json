@@ -1,6 +1,6 @@
 {
   "name": "@clappia/capacitor-system-settings",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Capacitor plugin to access the attributes of Developer Options",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
