@@ -25,19 +25,14 @@ public class SystemSettingsPlugin extends Plugin {
 
     @PluginMethod
     public void getDeveloperOptions(PluginCall call) {
-        System.out.println("Dev options get");
         try {
             String developerOptionsEnabled = Settings.Global.getString(
                 getContext().getContentResolver(),
                 Settings.Global.DEVELOPMENT_SETTINGS_ENABLED
             );
-            System.out.println("Dev options 1: " + developerOptionsEnabled);
-            System.out.println("Dev options 1: " + "1".equals(developerOptionsEnabled));
 
             JSObject responsePayload = new JSObject();
             responsePayload.put("developerOptionsEnabled", "1".equals(developerOptionsEnabled));
-            System.out.println("Dev options 1: " + responsePayload);
-            System.out.println("Dev options 1: " + responsePayload.toString());
             call.resolve(responsePayload);
         } catch (Exception e) {
             Log.e(TAG, "Dev options Error while fetching developer options" + e.getMessage());
