@@ -6,11 +6,7 @@ export class SystemSettingsWeb
   extends WebPlugin
   implements SystemSettingsPlugin
 {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
-  }
-  async getDeveloperOptions(): Promise<any> {
+  async getDeveloperOptions(): Promise<{ developerOptionsEnabled: boolean }> {
     return { developerOptionsEnabled: false };
   }
 }
