@@ -5,4 +5,12 @@ import Foundation
         print(value)
         return value
     }
+    
+    @objc public func getNumberFormatInfo() -> [String: String] {
+        let formatter = NumberFormatter()
+        return [
+            "decimalSeparator": formatter.decimalSeparator ?? ".",
+            "groupingSeparator": formatter.groupingSeparator ?? ","
+        ]
+    }
 }
