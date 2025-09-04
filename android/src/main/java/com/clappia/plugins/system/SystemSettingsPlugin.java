@@ -7,6 +7,9 @@ import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 
 @CapacitorPlugin(name = "SystemSettings")
 public class SystemSettingsPlugin extends Plugin {
@@ -36,6 +39,20 @@ public class SystemSettingsPlugin extends Plugin {
             call.resolve(responsePayload);
         } catch (Exception e) {
             Log.e(TAG, "Dev options Error while fetching developer options" + e.getMessage());
+            call.reject("INTERNAL_ERROR");
+        }
+    }
+    
+    @PluginMethod
+    public void getNumberFormatInfo(PluginCall call) {
+        try {
+            DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.getDefault());
+            JSObject responsePayload = new JSObject();
+            responsePayload.put("decimalSeparator", String.valueOf(symbols.getDecimalSeparator()));
+            responsePayload.put("groupingSeparator", String.valueOf(symbols.getGroupingSeparator()));
+            call.resolve(responsePayload);
+        } catch (Exception e) {
+            Log.e(TAG, "Error while fetching number format info: " + e.getMessage());
             call.reject("INTERNAL_ERROR");
         }
     }

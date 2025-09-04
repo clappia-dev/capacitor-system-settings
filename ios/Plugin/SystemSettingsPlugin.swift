@@ -15,4 +15,9 @@ public class SystemSettingsPlugin: CAPPlugin {
             "value": implementation.echo(value)
         ])
     }
+    
+    @objc func getNumberFormatInfo(_ call: CAPPluginCall) {
+        let result = implementation.getNumberFormatInfo()
+        call.resolve(result)
+    }
 }

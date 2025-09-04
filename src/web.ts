@@ -9,4 +9,11 @@ export class SystemSettingsWeb
   async getDeveloperOptions(): Promise<{ developerOptionsEnabled: boolean }> {
     return { developerOptionsEnabled: false };
   }
+
+  async getNumberFormatInfo(): Promise<{ decimalSeparator: string; groupingSeparator: string }> {
+    return {
+      decimalSeparator: ".",
+      groupingSeparator: ","
+    };
+  }
 }

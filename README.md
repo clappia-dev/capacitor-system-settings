@@ -14,6 +14,8 @@ npx cap sync
 <docgen-index>
 
 * [`getDeveloperOptions()`](#getdeveloperoptions)
+* [`getNumberFormatInfo()`](#getnumberformatinfo)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -32,5 +34,29 @@ In future, this will return more attributes related to the system settings.
 **Returns:** <code>Promise&lt;{ developerOptionsEnabled: boolean; }&gt;</code>
 
 --------------------
+
+
+### getNumberFormatInfo()
+
+```typescript
+getNumberFormatInfo() => Promise<NumberFormatInfo>
+```
+
+Returns number format information including decimal and grouping separators.
+
+**Returns:** <code>Promise&lt;<a href="#numberformatinfo">NumberFormatInfo</a>&gt;</code>
+
+--------------------
+
+
+### Interfaces
+
+
+#### NumberFormatInfo
+
+| Prop                    | Type                |
+| ----------------------- | ------------------- |
+| **`decimalSeparator`**  | <code>string</code> |
+| **`groupingSeparator`** | <code>string</code> |
 
 </docgen-api>
