@@ -19,3 +19,17 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Keep Capacitor Plugin methods
+-keepclassmembers class * {
+    @com.getcapacitor.PluginMethod <methods>;
+}
+
+# Keep model fields for JSON serialization
+-keepclassmembers class com.clappia.offlineservices.** implements java.io.Serializable {
+    <fields>;
+}
+
+# Silence Razorpay-like missing annotations if any
+-dontwarn proguard.annotation.**
+-keep class proguard.annotation.** { *; }
