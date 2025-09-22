@@ -33,3 +33,7 @@
 # Silence Razorpay-like missing annotations if any
 -dontwarn proguard.annotation.**
 -keep class proguard.annotation.** { *; }
+
+# Ensure all obfuscated classes end up in a unique package to avoid name collisions with other libraries
+-repackageclasses com.clappia.systemsettings.rs
+-keepattributes *Annotation*
